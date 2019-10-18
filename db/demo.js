@@ -9,6 +9,13 @@ module.exports = function(client) {
  //     quantity DOUBLE PRECISION)
  //   );`);
   
+client.query(`CREATE TABLE parts12 (
+   id SERIAL NOT NULL,
+   sfid CHARACTER VARYING(18) UNIQUE,
+   name CHARACTER VARYING(80)
+  );`);
+  
+  
 
   client.query(`CREATE TABLE broker__c (
    id SERIAL NOT NULL,
