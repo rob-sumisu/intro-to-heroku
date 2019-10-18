@@ -1,20 +1,12 @@
 module.exports = function(client) {
   
   
- //  client.query(`CREATE TABLE parts (
- //     id SERIAL NOT NULL,
- //     assetid CHARACTER VARYING(18) UNIQUE,
- //     name CHARACTER VARYING(80),
- //     category CHARACTER VARYING(80),
- //     quantity DOUBLE PRECISION)
- //   );`);
-  
-client.query(`CREATE TABLE parts (
+  client.query(`CREATE TABLE parts (
       id SERIAL NOT NULL,
       assetid CHARACTER VARYING(18) UNIQUE,
       name CHARACTER VARYING(80),
       category CHARACTER VARYING(80),
-      quantity DOUBLE PRECISION)
+      quantity DOUBLE PRECISION
   );`);
   
   
