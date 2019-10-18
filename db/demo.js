@@ -1,13 +1,13 @@
 module.exports = function(client) {
   
   
-   client.query(`CREATE TABLE parts (
-      id SERIAL NOT NULL,
-      assetid CHARACTER VARYING(18) UNIQUE,
-      name CHARACTER VARYING(80),
-      type CHARACTER VARYING(80),
-      quantity DOUBLE PRECISION)
-    );`);
+ //  client.query(`CREATE TABLE parts (
+ //     id SERIAL NOT NULL,
+ //     assetid CHARACTER VARYING(18) UNIQUE,
+ //     name CHARACTER VARYING(80),
+ //     type CHARACTER VARYING(80),
+ //     quantity DOUBLE PRECISION)
+ //   );`);
   
 
   client.query(`CREATE TABLE broker__c (
@@ -72,9 +72,9 @@ module.exports = function(client) {
 
   client.query(`INSERT INTO favorite__c (property__c, sfid) VALUES ('a0236000002NHKoAAO', 'a0136000003SsewAAC');`);
   
-  client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('mba1228','macbook air', 'laptop', 6);`);
-  client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('pchrome18','Pixelbook 5', 'laptop', 32);`);
-  client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('dell324','Dell Flip 32', 'laptop', 12);`);
-  client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('netgr12','Netgear 212 mifi', 'mifi', 23);`);
+  // client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('mba1228','macbook air', 'laptop', 6);`);
+  // client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('pchrome18','Pixelbook 5', 'laptop', 32);`);
+  // client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('dell324','Dell Flip 32', 'laptop', 12);`);
+  // client.query(`INSERT INTO parts (assetid, name, type, quantity) VALUES ('netgr12','Netgear 212 mifi', 'mifi', 23);`);
   
 };
