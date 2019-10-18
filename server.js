@@ -24,6 +24,22 @@ var propertyTable = 'property__c';
 var favoriteTable = 'favorite__c';
 var brokerTable = 'broker__c';
 
+
+// Insert parts data - for aggregate ODATA testing
+client.query('SELECT * FROM salesforce.parts', function(error, data) {
+  if (error !== null) {
+      console.log('Loading Parts Data...');
+      client.query(`CREATE TABLE parts (
+          id SERIAL NOT NULL,
+          assetid CHARACTER VARYING(18) UNIQUE,
+          name CHARACTER VARYING(80),
+          type CHARACTER VARYING(80),
+          quantity DOUBLE PRECISION)
+        );`);
+      console.log('Done loading Parts Data...');
+   }
+});
+   
 // setup the demo data if needed
 client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
   if (error !== null) {
