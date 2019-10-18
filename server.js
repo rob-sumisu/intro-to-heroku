@@ -26,7 +26,7 @@ var brokerTable = 'broker__c';
 
 
 // Insert parts data - for aggregate ODATA testing
-client.query('SELECT * FROM salesforce.parts', function(error, data) {
+client.query('SELECT * FROM parts', function(error, data) {
   if (error !== null) {
       console.log('Loading Parts Data...');
       client.query(`CREATE TABLE parts (
