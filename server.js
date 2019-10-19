@@ -44,6 +44,13 @@ client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
   }
 });
 
+//Update aggreate totals - 
+app.get('/totals', function(req, res) {
+  client.query('SELECT name, SUM(quantity) FROM parts GROUP BY name;', function(error, data) {
+    res.json(data.rows);
+  });
+});
+
 
 app.get('/property', function(req, res) {
   client.query('SELECT * FROM ' + propertyTable, function(error, data) {
