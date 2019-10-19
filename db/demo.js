@@ -3,7 +3,7 @@ module.exports = function(client) {
   
   client.query(`CREATE TABLE parts (
       id SERIAL NOT NULL,
-      assetid CHARACTER VARYING(18) UNIQUE,
+      assetid CHARACTER VARYING(18) PRIMARY KEY,
       name CHARACTER VARYING(80),
       category CHARACTER VARYING(80),
       quantity DOUBLE PRECISION
