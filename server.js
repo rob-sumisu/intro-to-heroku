@@ -50,7 +50,7 @@ app.get('/totals', function(req, res) {
   client.query('SELECT name, SUM(quantity) FROM parts GROUP BY name;', function(error, data) {
     data.forEach(function (eachPart, index) {
       console.log(eachPart, index);
-      client.query('INSERT INTO ' + parttotalsTable + ' (name, total__c) VALUES ('+ eachPart.name + ',' +  eachPart.sum + ');' );
+      client.query('INSERT INTO ' + parttotalsTable + ' (name, total__c) VALUES (' + eachPart.name + ',' +  eachPart.sum + ');' );
      });
     res.json(data.rows);
   });
