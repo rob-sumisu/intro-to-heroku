@@ -50,8 +50,7 @@ app.get('/totals', function(req, res) {
   client.query('SELECT name, SUM(quantity) FROM parts GROUP BY name;', function(error, data) {
     for (var obj in data){
       console.log('>> Name=' + data[obj].name + ' sum=' + data[obj].sum);
-   }
-     });
+    }
     res.json(data.rows);
   });
 });
