@@ -23,6 +23,7 @@ client.connect();
 var propertyTable = 'property__c';
 var favoriteTable = 'favorite__c';
 var brokerTable = 'broker__c';
+var parttotalsTable = 'salesforce.parttotals__c';
 
 
 // setup the demo data if needed
@@ -47,6 +48,10 @@ client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
 //Update aggreate totals - 
 app.get('/totals', function(req, res) {
   client.query('SELECT name, SUM(quantity) FROM parts GROUP BY name;', function(error, data) {
+    data.forEach(function (eachPart, index) {
+      console.log(eachPart, index);
+      client.query('INSERT INTO ' + parttotalsTable + ' (name, total__c) VALUES ('+ eachPart.name + ',' +  eachPart.sum + ');' );
+     });
     res.json(data.rows);
   });
 });
