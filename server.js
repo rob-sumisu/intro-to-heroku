@@ -48,8 +48,9 @@ client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
 //Update aggreate totals - 
 app.get('/totals', function(req, res) {
   client.query('SELECT name, SUM(quantity) FROM parts GROUP BY name;', function(error, data) {
-    for (var obj in data){
-      console.log('>> Name=' + data[obj].name + ' sum=' + data[obj].sum);
+    console.log('>> data=' +data);
+    for (var obj in data.rows){
+      console.log('>> Name=' + data.rows[obj].name + ' sum=' + data.rows[obj].sum);
     }
     res.json(data.rows);
   });
