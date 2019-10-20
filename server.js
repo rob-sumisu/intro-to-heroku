@@ -51,6 +51,7 @@ app.get('/totals', function(req, res) {
     console.log('>> data=' +data);
     for (var obj in data.rows){
       console.log('>> Name=' + data.rows[obj].name + ' sum=' + data.rows[obj].sum);
+      client.query(`INSERT INTO salesforce.parttotals__c (name, total__c) VALUES ('` + data.rows[obj].name + `',` + data.rows[obj].sum + ` );`);
     }
     res.json(data.rows);
   });
