@@ -26,7 +26,7 @@ var brokerTable = 'broker__c';
 var parttotalsTable = 'salesforce.parttotals__c';
 
 
-// setup the demo data if needed
+// setup the demo data if needed abcc
 client.query('SELECT * FROM salesforce.broker__c', function(error, data) {
   if (error !== null) {
     client.query('SELECT * FROM broker__c', function(error, data) {
