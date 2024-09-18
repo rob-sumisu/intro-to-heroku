@@ -8,6 +8,7 @@ import {BrokerListPage} from './pages/broker-list/broker-list';
 import {FavoriteListPage} from './pages/favorite-list/favorite-list';
 import {PropertyService} from './services/property-service';
 import {BrokerService} from './services/broker-service';
+// foo 
 
 @App({
     templateUrl: 'build/app.html',
